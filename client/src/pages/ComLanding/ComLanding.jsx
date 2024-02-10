@@ -6,11 +6,11 @@ import Signin from "../Signin/Signin";
 
 import { useSelector } from "react-redux";
 
-const Home = () => {
+const ComLanding = () => {
   const { currentUser } = useSelector((state) => state.user);
 
   return (
-    <>
+    <div className="w-full py-[40px]">
       {!currentUser ? (
         <Signin />
       ) : (
@@ -18,16 +18,13 @@ const Home = () => {
           <div className="px-6">
             <LeftSidebar />
           </div>
-          <div className="col-span-2 border-x-2 border-t-slate-800 px-6">
+          <div className="col-span-3 border-x-2 border-t-slate-800 px-6">
             <MainTweet />
-          </div>
-          <div className="px-6">
-            <RightSidebar />
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
-export default Home;
+export default ComLanding;

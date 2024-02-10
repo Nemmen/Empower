@@ -64,7 +64,7 @@ const Profile = () => {
         <div className="px-6">
           <LeftSidebar />
         </div>
-        <div className="col-span-2 border-x-2 border-t-slate-800 px-6">
+        <div className="col-span-3 border-x-2 border-t-slate-800 px-6">
           <div className="flex justify-between items-center">
             <img
               src={userProfile?.profilePicture}
@@ -73,7 +73,7 @@ const Profile = () => {
             />
             {currentUser._id === id ? (
               <button
-                className="px-4 -y-2 bg-blue-500 rounded-full text-white"
+                className="bg-[#6a65ff] text-white font-medium transition-all duration-200 border-0 rounded-full hover:bg-[#273b47] hover:text-white py-1 px-5"
                 onClick={() => setOpen(true)}
               >
                 Edit Profile
@@ -106,9 +106,7 @@ const Profile = () => {
           </div>
         </div>
 
-        <div className="px-6">
-          <RightSidebar />
-        </div>
+       
       </div>
       {open && <EditProfile setOpen={setOpen} />}
     </>

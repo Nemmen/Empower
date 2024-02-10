@@ -1,51 +1,15 @@
 import React, { useState } from "react";
-import StarBorderPurple500Icon from "@mui/icons-material/StarBorderPurple500";
-import SearchIcon from "@mui/icons-material/Search";
+import empowermend from "../img/empowermend.jpg";
+import { Link } from "react-router-dom";
 
-
-
-
-import { useLocation } from "react-router-dom";
-import UserPlaceholder from "../UserPlaceholder/UserPlaceholder";
+import Button from "./Button";
+import { FaBarsStaggered } from "react-icons/fa6";
+import { IoCloseOutline } from "react-icons/io5";
 
 const Navbar = () => {
-  const [userData, setUserData] = useState(null);
-  const location = useLocation().pathname;
-
-
+  const [toggle, setToggle] = useState(false);
   return (
-    <>
-    <div className="grid grid-cols-1 md:grid-cols-4 my-5 justify-center">
-       <div className="mx-auto md:mx-0">
-         <img
-          src="/twitter-logo.png"
-          alt="Twitter Logo"
-          width={"40px"}
-          className="ml-8"
-        />
-      </div>
-
-      <div className="col-span-2 md:border-x-2 md:border-slate-200 md:px-6 my-6 md:my-0">
-        <div className="flex justify-between items-center">
-          <h2 className="font-bold text-2xl">
-            {location.includes("profile") ? (
-              <UserPlaceholder setUserData={setUserData} userData={userData} />
-            ) : location.includes("explore") ? (
-              "Explore"
-            ) : (
-              "Home"
-            )}
-          </h2>
-          <StarBorderPurple500Icon />
-        </div>
-      </div>
-
-      <div className="px-0 md:px-6 mx-auto">
-        <SearchIcon className="absolute m-2" />
-        <input type="text" className="bg-blue-100 rounded-full py-2 px-8" />
-      </div>
-    </div>
-    {/* <section className=" text-center flex justify-center items-center scroll-smooth">
+    <section className=" text-center flex justify-center items-center scroll-smooth">
       <nav className="sm:w-[90%] w-full flex py-2 justify-between items-center">
         <img src={empowermend} alt="" className="w-[80px]" />
         <ul className="list-none sm:flex gap-4 hidden justify-center ms-5 items-center flex-1">
@@ -70,7 +34,7 @@ const Navbar = () => {
             <Link to="/experts">EXPERTS</Link>
           </li>
           <li
-            className={`font-poppins  font-normal active:font-semibold  ms-auto cursor-pointer text-[18px] `}
+            className={`font-poppins  font-normal active:font-semibold  ms-auto me-0 cursor-pointer text-[18px] `}
           >
             <Link to="/contact">
               <Button name="Contact"></Button>
@@ -122,8 +86,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-    </section> */}
-    </>
+    </section>
   );
 };
 

@@ -38,9 +38,9 @@ const MainTweet = () => {
         ></textarea>
         <button
           onClick={handleSubmit}
-          className="bg-blue-500 text-white py-2 px-4 rounded-full ml-auto"
+          className=" bg-[#6a65ff] text-white font-medium transition-all duration-200 border-0 rounded-full hover:bg-[#273b47] hover:text-white py-1 px-5 "
         >
-          Tweet
+          Post
         </button>
       </form>
       <TimelineTweet />
